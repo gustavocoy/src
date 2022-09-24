@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="../static/css/index.css">
+	<title>BIENVENIDO A LA PAGINA PRINCIPAL</title>
+</head>
+<body>
+
+	<h1>REGISTRO POSTGRE</h1>
+	<form action="/guardar_persona" method="POST">
+		<label for="nombre">Nombre: </label>
+		<input type="text" name="nombre">
+		<label for="apellido">Apellido: </label>
+		<input type="text" name="apellido">
+		<label for="edad">Telefono: </label>
+		<input type="number" name="edad">
+		<input type="submit" value="Enviar">
+	</form>
+	<caption>Usuarios registrados</caption>
+	<table class="tabla card">
+
+		{% for persona in personas%}
+		<thead>
+	  
+		  <tr>
+	  
+			<th>Dato</th>
+	  
+			<th>Descripción</th>
+	  
+		  </tr>
+	  
+		</thead>
+	  
+		<tbody>
+	  
+		  <tr>
+	  
+			<td>nombre</td>
+	  
+			<td>{{persona[1]}}</td>
+	  
+		  </tr>
+	  
+		</tbody>
+	  
+		<tbody>
+	  
+		  <tr>
+	  
+			<td>Apellido</td>
+	  
+			<td>
+				{{persona[2]}}</td>
+	  
+		  </tr>
+	  
+		  <tr>
+	  
+			<td>edad</td>
+	  
+			<td>{{persona[3]}}</td>
+	  
+		  </tr>
+	  
+		</tbody>
+	  
+		
+			<td>
+				<a href="./" class="btn btn-secondary btn-sm btn-info">Editar</a>
+				<a href="./" class="btn btn-danger btn-delete btn-sm">Eliminar</a>
+
+			</td>
+	  
+		
+	  
+		 
+	  
+		</tbody>
+		{% endfor %}
+	  </table>
+
+
+	<br><br><br>
+	<ul>
+	
+
+</body>
+</html>
